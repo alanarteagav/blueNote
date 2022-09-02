@@ -1,5 +1,3 @@
-from ast import match_case
-from unittest import case
 from blueNote.note.nomenclature import NoteName
 
 class Note:
@@ -12,7 +10,9 @@ class Note:
         self.midiNumber =  self.name.value + 12 * (self.pitch + 1)
 
     def getName(self):
-        return self.name.value
+        match self.name:
+            case other:
+                return self.name.name
 
     def getPitch(self):
         return self.pitch
